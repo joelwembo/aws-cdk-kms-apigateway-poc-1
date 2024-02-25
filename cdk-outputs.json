@@ -2,6 +2,6 @@
   "KmsDemoStack": {
     "KMSKeyID": "45752a53-7c8c-4de4-8633-c4082e7ae9e6",
     "MyApiEndpoint869ABE96": "https://o6lxlcasci.execute-api.ap-southeast-1.amazonaws.com/prod/",
-    "KMSKeyValue": "arn:aws:kms:ap-southeast-1:059978233428:key/45752a53-7c8c-4de4-8633-c4082e7ae9e6"
+    "KMSKeyValue": "arn:aws:kms:ap-southeast-1:xxxxxxxxxxx:key/45752a53-7c8c-4de4-8633-c4082e7ae9e6"
   }
 }
