@@ -37,7 +37,7 @@ jobs:
         run: npm run build
 
       - name: Bootstrap CDK Stack
-        run: npx cdk bootstrap 
+        run: npx - cdk bootstrap --trust=059978233428 aws://059978233428/ap-southeast-1 --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess aws://059978233428/ap-southeast-1 --verbose
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
