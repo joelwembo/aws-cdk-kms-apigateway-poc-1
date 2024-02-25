@@ -7,7 +7,6 @@ on:
    branches: ['master', 'main']
 
 env:
- # Credentials for deployment to AWS
  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
  AWS_DEFAULT_REGION: "ap-southeast-1"
@@ -38,7 +37,7 @@ jobs:
 
       - name: Bootstrap CDK Stack
         run: npx cdk bootstrap
-        
+
       - name: Deploy AWS CDK Stack
         run: "npx cdk deploy --require-approval never --no-asset-metadata"
        
