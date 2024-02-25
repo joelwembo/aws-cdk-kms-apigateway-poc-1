@@ -6,7 +6,7 @@ on:
     - master
     - main
     - feature/*
-    - bug/
+    - bug/*
 
 jobs:
   build:
