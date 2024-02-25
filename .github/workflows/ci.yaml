@@ -1,12 +1,10 @@
 name: AWS CDK CI
 
 on:
-  pull_request:
-    branches:
-    - master
-    - main
-    - feature/*
-    - bug/*
+ push:
+   branches: ['master', 'main']
+ pull_request:
+   branches: ['master', 'main']
 
 jobs:
   build:

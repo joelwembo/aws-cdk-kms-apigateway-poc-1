@@ -26,9 +26,15 @@ jobs:
 
       - name: Install Dependencies
         run: npm ci
+      
+      - name: Install AWS CDK globally
+        run: npm install aws-cdk 
 
       - name: Build CDK Stack
         run: npm run build
+
+      - name: Bootstrap CDK Stack
+        run: npx cdk bootstrap 
 
       - name: Deploy AWS CDK Stack
         run: "npx cdk deploy --require-approval never --no-asset-metadata"
