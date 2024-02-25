@@ -15,7 +15,7 @@ env:
 jobs:
   build:
     # if: github.event.pull_request.merged == true
-    name: Deploy AWS CDK Typescript Stack
+    name: Deploy AWS CDK KMS and API Gateway Stack
     runs-on: ubuntu-latest
     steps:
       - name: Initiated By User
@@ -38,10 +38,14 @@ jobs:
 
       - name: Bootstrap CDK Stack
         run: npx cdk bootstrap 
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: "ap-southeast-1"
 
       - name: Deploy AWS CDK Stack
         run: "npx cdk deploy --require-approval never --no-asset-metadata"
-        # env:
-        #   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        #   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        #   AWS_DEFAULT_REGION: "ap-southeast-1"
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: "ap-southeast-1"
