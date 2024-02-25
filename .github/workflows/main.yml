@@ -37,10 +37,10 @@ jobs:
         run: npm run build
 
       - name: Bootstrap CDK Stack
-        run: cdk bootstrap 
+        run: npx cdk bootstrap 
 
       - name: Deploy AWS CDK Stack
-        run: "cdk deploy --require-approval never --no-asset-metadata"
+        run: "npx cdk deploy --require-approval never --no-asset-metadata"
         # env:
         #   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         #   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
